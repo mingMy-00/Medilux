@@ -1,35 +1,37 @@
 package com.group.medilux.springboot.domain.posts;
 
-import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 
-//Entity => 테이블과 링크될 클래스
-//GeneratedValue => pk의 생성규칙
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
 @Entity
-public class Posts {
-
-    //pk필드
+public class Posts extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @Column(length = 500, nullable = false)
     private String title;
 
-    @Column(columnDefinition = "TEXT" , nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
     private String author;
 
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
     @Builder
-    public Posts(String title, String content, String author) {
-        this.title      = title;
-        this.content    = content;
-        this.author     = author;
+    public Posts(Long id, String title, String content, String author) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.author = author;
     }
 }
