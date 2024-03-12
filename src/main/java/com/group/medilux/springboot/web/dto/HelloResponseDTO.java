@@ -1,12 +1,16 @@
 package com.group.medilux.springboot.web.dto;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public class HelloResponseDto {
+public class HelloResponseDTO {
     private final String name;
     private final int amount;
 }
+
+
+
+
+
