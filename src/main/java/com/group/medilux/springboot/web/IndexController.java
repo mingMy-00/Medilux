@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class IndexController {
 
+    @Autowired
     private final PostsService postsService;
 
     //처음 화면에 게시글 불러오기 
@@ -28,13 +29,13 @@ public class IndexController {
         return "posts-save";
     }
 
+    //게시글 수정
     @GetMapping("/posts/update/{id}")
     public String postsUpdate(@PathVariable Long id, Model model) {
-
         model.addAttribute("post" , postsService.findById(id));
-
         return "posts-update";
     }
+
 
 
 }
