@@ -26,6 +26,9 @@ public class OAuthAttributes {
     }
 
     public static OAuthAttributes of(String refistrationId, String userNameAttributeName, Map<String, Object> attributes) {
+        if("naver".equals(refistrationId)) {
+            return ofNaver("id" ,attributes);
+        }
         return ofGoogle(userNameAttributeName, attributes);
     }
     private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
