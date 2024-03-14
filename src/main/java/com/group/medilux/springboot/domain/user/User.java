@@ -2,9 +2,14 @@ package com.group.medilux.springboot.domain.user;
 
 import com.group.medilux.springboot.domain.posts.BaseTimeEntity;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Getter
+@NoArgsConstructor
+@Entity
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +29,9 @@ public class User extends BaseTimeEntity {
     private Role role;
 
     @Builder
-    public User(Long id, String email, String picture, Role role) {
+    public User(Long id, String name, String email, String picture, Role role) {
         this.id = id;
+        this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;

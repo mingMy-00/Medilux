@@ -7,6 +7,5 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     //이미 가입한 회원인지 확인해주는 method
-    @Override
-    Optional<User> findById(Long aLong);
+    Optional<User> findByEmail(String email);
 }

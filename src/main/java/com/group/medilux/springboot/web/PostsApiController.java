@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class PostsApiController {
 
-    @Autowired
     private final PostsService postsService;
 
     //게시글 등록
