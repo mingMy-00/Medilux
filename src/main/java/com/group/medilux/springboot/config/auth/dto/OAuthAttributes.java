@@ -5,6 +5,7 @@ import com.group.medilux.springboot.domain.user.Role;
 import com.group.medilux.springboot.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.Map;
 
