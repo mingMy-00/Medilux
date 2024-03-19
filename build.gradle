@@ -34,14 +34,13 @@ dependencies {
     implementation('org.springframework.session:spring-session-jdbc')
     implementation('org.mariadb.jdbc:mariadb-java-client')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.security:spring-security-test')
     annotationProcessor('org.projectlombok:lombok:1.18.24')
 }
-compileJava {
-    options.fork = true
-    options.forkOptions.executable = "${System.getenv('JAVA_HOME')}/bin/javac"
+def javaHome = project.findProperty('JAVA_HOME')
+if (javaHome != null) {
+    System.getenv().put("JAVA_HOME", javaHome.toString())
 }
-
-
 
 
 
